@@ -32,6 +32,7 @@
 
 #include <stdlib.h>
 #include <assert.h>
+#include <iostream>
 
 
 Exiv2::ExifData getExifFromPath(char* filename) {
