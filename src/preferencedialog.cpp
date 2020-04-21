@@ -84,6 +84,7 @@ void PreferenceDialog::writePreferences() {
     settings.setValue(KEY_PREF_COMPRESSION_EXIF_COPYRIGHT, ui->keepCopyrightCheckBox->isChecked());
     settings.setValue(KEY_PREF_COMPRESSION_EXIF_DATE, ui->keepDateCheckBox->isChecked());
     settings.setValue(KEY_PREF_COMPRESSION_EXIF_COMMENT, ui->keepCommentsCheckBox->isChecked());
+    settings.setValue(KEY_PREF_COMPRESSION_EXIF_ALL, ui->keepAllExifsCheckBox->isChecked());
     settings.setValue(KEY_PREF_COMPRESSION_PROGRESSIVE, ui->progressiveCheckBox->isChecked());
     settings.endGroup();
 }
@@ -105,6 +106,7 @@ void PreferenceDialog::readPreferences() {
     ui->keepCopyrightCheckBox->setChecked(settings.value(KEY_PREF_COMPRESSION_EXIF_COPYRIGHT).value<bool>());
     ui->keepDateCheckBox->setChecked(settings.value(KEY_PREF_COMPRESSION_EXIF_DATE).value<bool>());
     ui->keepCommentsCheckBox->setChecked(settings.value(KEY_PREF_COMPRESSION_EXIF_COMMENT).value<bool>());
+    ui->keepAllExifsCheckBox->setChecked(settings.value(KEY_PREF_COMPRESSION_EXIF_ALL).value<bool>());
     ui->progressiveCheckBox->setChecked(settings.value(KEY_PREF_COMPRESSION_PROGRESSIVE).value<bool>());
     settings.endGroup();
 }
@@ -145,6 +147,10 @@ void PreferenceDialog::on_keepDateCheckBox_toggled(bool checked) {
 }
 
 void PreferenceDialog::on_keepCommentsCheckBox_toggled(bool checked) {
+    ui->exifCheckBox->setCheckState(getExifsCheckBoxGroupState());
+}
+
+void PreferenceDialog::on_keepAllExifsCheckBox_toggled(bool checked) {
     ui->exifCheckBox->setCheckState(getExifsCheckBoxGroupState());
 }
 

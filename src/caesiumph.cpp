@@ -186,6 +186,7 @@ void CaesiumPH::readPreferences() {
     if (settings.value(KEY_PREF_COMPRESSION_EXIF_COMMENT).value<bool>()) {
         params.importantExifs.append(EXIF_COMMENTS);
     }
+    params.allExifs = settings.value(KEY_PREF_COMPRESSION_EXIF_ALL).value<bool>();
     settings.endGroup();
 
     settings.beginGroup(KEY_PREF_GROUP_GENERAL);

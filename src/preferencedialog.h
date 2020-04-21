@@ -47,6 +47,7 @@
 #define KEY_PREF_COMPRESSION_EXIF_COPYRIGHT QString("exifCopyright")
 #define KEY_PREF_COMPRESSION_EXIF_DATE QString("exifDate")
 #define KEY_PREF_COMPRESSION_EXIF_COMMENT QString("exifComment")
+#define KEY_PREF_COMPRESSION_EXIF_ALL QString("exifAll")
 #define KEY_PREF_COMPRESSION_PROGRESSIVE QString("progressive")
 
 //Geometry group keys
@@ -80,6 +81,7 @@ private slots:
     void on_keepCopyrightCheckBox_toggled(bool checked);
     void on_keepDateCheckBox_toggled(bool checked);
     void on_keepCommentsCheckBox_toggled(bool checked);
+    void on_keepAllExifsCheckBox_toggled(bool checked);
     void on_languageComboBox_currentIndexChanged(int index);
 
     void on_menuListWidget_currentRowChanged(int currentRow);

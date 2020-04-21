@@ -50,6 +50,7 @@ enum list_columns {
 typedef struct var {
     int exif;
     QList<cexifs> importantExifs;
+    bool allExifs;
     int progressive;
     bool overwrite;
     int outMethodIndex;
