@@ -32,6 +32,7 @@
 
 Exiv2::ExifData getExifFromPath(char* filename);
 QString exifDataToString(Exiv2::ExifData exifData);
+void writeAllExifTags(Exiv2::ExifData exifData, QString imagePath);
 void writeSpecificExifTags(Exiv2::ExifData exifData, QString imagePath, QList<cexifs> exifs);
 void writeExif(Exiv2::ExifData exifData, Exiv2::ExifData* newExifData, std::string key_name);
 

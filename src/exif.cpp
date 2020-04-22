@@ -96,6 +96,26 @@ QString exifDataToString(Exiv2::ExifData exifData) {
     }
 }
 
+void writeAllExifTags(Exiv2::ExifData exifData, QString imagePath) {
+    //If tags are empty, just return back
+    if (exifData.empty()) {
+        return;
+    }
+
+    //Get output file path
+    std::string path = imagePath.toStdString();
+
+    // Copy EXIF Data
+    Exiv2::ExifData newExifData(exifData);
+
+    Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(path);
+    assert(image.get() != 0);
+
+    image->setExifData(newExifData);
+    image->writeMetadata();
+
+}
+
 void writeSpecificExifTags(Exiv2::ExifData exifData, QString imagePath, QList<cexifs> exifs) {
     //If tags are empty, jus return back
     if (exifData.empty()) {

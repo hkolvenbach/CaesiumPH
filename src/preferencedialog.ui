@@ -386,21 +386,12 @@ QPushButton:hover {
             <property name="sizeConstraint">
              <enum>QLayout::SetMaximumSize</enum>
             </property>
-            <item row="1" column="0">
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+            <item row="1" column="1" colspan="2">
+             <widget class="QCheckBox" name="keepCopyrightCheckBox">
+              <property name="text">
+               <string>Keep copyright</string>
               </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Fixed</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>15</width>
-                <height>5</height>
-               </size>
-              </property>
-             </spacer>
+             </widget>
             </item>
             <item row="2" column="0">
              <spacer name="horizontalSpacer_2">
@@ -418,7 +409,14 @@ QPushButton:hover {
               </property>
              </spacer>
             </item>
-            <item row="6" column="1" colspan="2">
+            <item row="2" column="1" colspan="2">
+             <widget class="QCheckBox" name="keepDateCheckBox">
+              <property name="text">
+               <string>Keep date</string>
+              </property>
+             </widget>
+            </item>
+            <item row="5" column="1" colspan="2">
              <spacer name="verticalSpacer_2">
               <property name="orientation">
                <enum>Qt::Vertical</enum>
@@ -431,7 +429,23 @@ QPushButton:hover {
               </property>
              </spacer>
             </item>
-            <item row="5" column="0" colspan="3">
+            <item row="1" column="0">
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>15</width>
+                <height>5</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="4" column="0" colspan="3">
              <widget class="QCheckBox" name="progressiveCheckBox">
               <property name="text">
                <string>Progressive</string>
@@ -448,13 +462,6 @@ QPushButton:hover {
               </property>
              </widget>
             </item>
-            <item row="1" column="1" colspan="2">
-             <widget class="QCheckBox" name="keepCopyrightCheckBox">
-              <property name="text">
-               <string>Keep copyright</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="0" colspan="3">
              <widget class="QCheckBox" name="exifCheckBox">
               <property name="text">
@@ -468,38 +475,8 @@ QPushButton:hover {
               </property>
              </widget>
             </item>
-            <item row="2" column="1" colspan="2">
-             <widget class="QCheckBox" name="keepDateCheckBox">
-              <property name="text">
-               <string>Keep date</string>
-              </property>
-             </widget>
-            </item>
             <item row="3" column="0">
              <spacer name="horizontalSpacer_3">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Fixed</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>15</width>
-                <height>5</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item row="4" column="1">
-             <widget class="QCheckBox" name="keepAllExifsCheckBox">
-              <property name="text">
-               <string>Keep all EXIF data</string>
-              </property>
-             </widget>
-            </item>
-            <item row="4" column="0">
-             <spacer name="horizontalSpacer_5">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>

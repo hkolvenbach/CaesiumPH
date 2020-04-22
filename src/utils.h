@@ -33,6 +33,7 @@
 
 #define MAX_COLUMNS 5
 
+#define MAX_EXIF_ENTRIES 3
 enum cexifs {
     EXIF_COPYRIGHT,
     EXIF_DATE,
@@ -50,7 +51,6 @@ enum list_columns {
 typedef struct var {
     int exif;
     QList<cexifs> importantExifs;
-    bool allExifs;
     int progressive;
     bool overwrite;
     int outMethodIndex;

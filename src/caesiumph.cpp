@@ -186,7 +186,6 @@ void CaesiumPH::readPreferences() {
     if (settings.value(KEY_PREF_COMPRESSION_EXIF_COMMENT).value<bool>()) {
         params.importantExifs.append(EXIF_COMMENTS);
     }
-    params.allExifs = settings.value(KEY_PREF_COMPRESSION_EXIF_ALL).value<bool>();
     settings.endGroup();
 
     settings.beginGroup(KEY_PREF_GROUP_GENERAL);
@@ -420,7 +419,10 @@ void CaesiumPH::compressRoutine(CTreeWidgetItem* item) {
 
 
         //Write important metadata as user requested
-        if (params.exif != 2 && !params.importantExifs.isEmpty()) {
+        if (params.exif != 2 && params.importantExifs.size() == MAX_EXIF_ENTRIES) {
+            // Copy all EXIF metadata
+            writeAllExifTags(exifData, outputPath);
+        } else if (params.exif != 2 && !params.importantExifs.isEmpty()) {
             writeSpecificExifTags(exifData, outputPath, params.importantExifs);
         }
 
